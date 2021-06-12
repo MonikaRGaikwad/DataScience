@@ -1,0 +1,29 @@
+data(ChickWeight)
+str(ChickWeight)
+## Classes 'nfnGroupedData', 'nfGroupedData', 'groupedData' and 'data.frame':   578 obs. of  4 variables:
+##  $ weight: num  42 51 59 64 76 93 106 125 149 171 ...
+##  $ Time  : num  0 2 4 6 8 10 12 14 16 18 ...
+##  $ Chick : Ord.factor w/ 50 levels "18"<"16"<"15"<..: 15 15 15 15 15 15 15 15 15 15 ...
+##  $ Diet  : Factor w/ 4 levels "1","2","3","4": 1 1 1 1 1 1 1 1 1 1 ...
+##  - attr(*, "formula")=Class 'formula' length 3 weight ~ Time | Chick
+##   .. ..- attr(*, ".Environment")=<environment: R_EmptyEnv> 
+##  - attr(*, "outer")=Class 'formula' length 2 ~Diet
+##   .. ..- attr(*, ".Environment")=<environment: R_EmptyEnv> 
+##  - attr(*, "labels")=List of 2
+##   ..$ x: chr "Time"
+##   ..$ y: chr "Body weight"
+##  - attr(*, "units")=List of 2
+##   ..$ x: chr "(days)"
+##   ..$ y: chr "(gm)"
+
+
+summary(ChickWeight)
+
+table(ChickWeight$Diet)
+table(ChickWeight$Chick)
+table(ChickWeight$Diet, ChickWeight$Chick)
+table(ChickWeight$Chick, ChickWeight$Diet)
+#Boxplot of Chicken weight
+boxplot(ChickWeight$weight, xlab="ChickenWeight", main="Distribution of Chicken Weight")
+#Histogram of Chicken weight
+hist(ChickWeight$weight, xlab="ChickenWeight", main="Distribution of Chicken Weight")
